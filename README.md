@@ -74,7 +74,7 @@
 - Windows 10/11 64 bits.
 - GPU compatible DirectX 11 (dxcam/d3dshot).
 - **Installation locale de Python 3.10 ou version supérieure (obligatoire pour exécuter Saobot.exe)**.
-- Arduino Leonardo (ou compatible) pour le spoofing USB.
+- Arduino Leonardo (ou compatible) **obligatoire pour piloter la souris** (mouvements/simulation HID) et donc pour faire fonctionner l’aimbot en toute discrétion.
 - Connexion Internet (activation licence, téléchargement arduino-cli, mises à jour).
 
 ## Architecture du dépôt
