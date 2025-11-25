@@ -1,90 +1,113 @@
-# COLORBOT VALORANT MAIN GUI
+# SAOBOT – Valorant Colorbot Suite
 
-**Créateur : moi**  \
-**Tous droits réservés**
+![Saobot logo](assets/saobot.ico)
+
+**Saobot** est une interface premium qui réunit colorbot, overlay FOV évolué et module de spoofing USB autour d’une expérience inspirée de Valorant. L’objectif est de montrer comment automatiser la vision par couleur, l’intégration Arduino et le pilotage d’outils temps réel dans un cadre éducatif. Toute diffusion vise la recherche et l’apprentissage : l’utilisateur final est seul responsable de l’usage qu’il en fait.
+
+> ⚠️ **Avertissement pédagogique** – Saobot est fourni pour illustrer des concepts (vision couleur, hooking d’événements, automatisation HID). Nous ne cautionnons ni n’encourageons une utilisation contraire aux CGU de Riot Games ou d’un tiers. En téléchargeant ce dépôt vous acceptez d’assumer l’entière responsabilité des actions menées avec le logiciel.
 
 ---
 
-## Présentation
-COLORBOT VALORANT MAIN GUI est une suite complète pour piloter un colorbot Valorant et gérer un module de spoofing USB Arduino Leonardo. L’application propose une interface moderne inspirée de Valorant, un panneau de connexion premium, ainsi qu’un centre de commandes unifié pour configurer, surveiller et personnaliser le bot en toutes circonstances.
+## Pourquoi Saobot ?
 
-## Fonctionnalités principales
-- **Connexion sécurisée** via le panneau premium « ACCÈS PREMIUM » et synchronisation de licence.
-- **Command Center** avec onglets dédiés pour l’aimbot, le triggerbot, l’anti-recul et le suivi matériel.
-- **Overlay FOV** configurable en temps réel (couleurs, clignotements, stroke, etc.).
-- **Calibration avancée** des sensibilités, DPI, profils de ciblage (tête/corps/pieds) et intensités prédéfinies.
-- **Spoofing USB** intégré : détection des périphériques, clonage VID/PID et téléversement automatisé du firmware Arduino.
-- **Diagnostic** complet : logs, résumé système, monitoring FPS capture et statut Arduino.
+- **Expérience unifiée** : login premium, dashboard modulaire, télémétrie live et sauvegarde auto des profils.
+- **Contrôle chirurgical** : overlay FOV ultra-fin (circle/square/triangle/star/heart), clignotement RGB, stroke dynamique et transparence totale.
+- **Automations combo** : aimbot, triggerbot et anti-recul fonctionnent ensemble ou séparément avec profils tête/corps/pieds, offsets précis et temps de réaction au milliseconde.
+- **Spoofing intégré** : flash Arduino Leonardo, clonage VID/PID et scripts CLI sans quitter l’app, idéal pour étudier la chaîne complète capture ➜ HID.
+- **Observabilité** : panneau systèmes, FPS capture, statut Arduino, logs temps réel, crash reporter dédié.
+- **Stack moderne** : PyQt5, numpy, dxcam/d3dshot, pyserial, packaging PyInstaller (Saobot.exe) prêt à diffuser.
 
-## Services proposés
-- Gestion centralisée du colorbot (capture, traitement, clic automatisé) avec options de discrétion et personnalisation.
-- Spoofing USB rapide via l’outil intégré, sans dépendances externes supplémentaires.
-- Enregistrement automatique des paramètres et journaux pour faciliter le support et la maintenance.
+## Fonctionnalités détaillées
 
-## Prérequis
+- **Portail de licence** : panneau « ACCÈS PREMIUM » avec ouverture de ticket/support rapide (Discord & site `https://saobot.shop`).
+- **Command Center** :
+  - *General* – backends de capture (dxcam/d3dshot), throttling, preview basse latence.
+  - *FOV Overlay* – formes multiples, animations RGB, blink, stroke ajustable.
+  - *Aimbot* – vitesses X/Y indépendantes, offsets dynamiques, profils présets, safe-mode pour humains.
+  - *Triggerbot* – délais personnalisables, filtres de couleur, zones flexibles.
+  - *Anti-Recoil* – courbes personnalisées par arme/profil.
+  - *Spoofing* – détection HID, clonage VID/PID, upload sketch `hardware/microcontroleur/arduino.ino`.
+  - *User/System* – infos licence, HWID, charge CPU, FPS capture.
+- **Overlay avancé** : fenêtrage frameless toujours-on-top, hints transparents, support multi-color palette & blinking.
+- **Journaux & support** : `logs/activity/` pour observer la calibration, `logs/crash/` pour analyser les exceptions, export simple lors d’une demande de support.
+
+## Comparatif express
+
+| Solution | Saobot | Colorbots classiques |
+| --- | --- | --- |
+| UI & UX | Dashboard complet, thèmes clair/sombre, overlay custom | Interfaces minimalistes, options limitées |
+| Spoofing | Gestion Arduino intégrée + firmware prêt | Outils tiers à configurer soi-même |
+| Support | Boutons dédiés vers Discord/boutique, logs structurés | Généralement Discord-only sans diagnostics |
+| Packaging | `.exe` PyInstaller signé d’un icon Saobot | Scripts bruts nécessitant Python manuel |
+
+## Acheter & activer Saobot
+
+1. Rendez-vous sur **[saobot.shop](https://saobot.shop)** pour sélectionner une formule.
+2. Le paiement valide immédiatement une clé liée à votre HWID.
+3. Téléchargez la dernière release (`dist/Saobot.exe`) ou exécutez `python main.py` si vous préférez les sources.
+4. Saisissez la clé dans le portail d’accès. L’application affiche alors les informations de licence, la date d’expiration et les liens support.
+
+> Besoin d’assistance ? Cliquez sur **Support Discord** dans la fenêtre de login pour ouvrir directement un ticket.
+
+## Installation développeur
+
+```powershell
+git clone https://github.com/<votre-org>/saobot.git
+cd saobot
+python -m venv .venv
+.\.venv\Scripts\Activate.ps1
+pip install -r documentation/requirements.txt
+python main.py
+```
+
+- `configuration/settings.ini` est généré automatiquement.
+- Le firmware Arduino se trouve dans `microcontroleur/arduino.ino` (Leonardo recommandé).
+- Pour générer l’exécutable Windows : `pyinstaller main.spec` → sortie `dist/Saobot.exe` (~100 Mo).
+
+## Utilisation rapide
+
+1. Lancer Saobot (`Saobot.exe` ou `python main.py`).
+2. Entrer la licence ➜ accès accordé.
+3. Configurer les modules nécessaires (Aimbot/Triggerbot/Anti-recoil/FOV/Spoofing).
+4. Cliquer **Lancer le bot** pour démarrer la capture et les actions automatisées.
+5. Utiliser l’onglet Spoofing pour flasher ou cloner un périphérique si nécessaire.
+
+## Prérequis techniques
+
 - Windows 10/11 64 bits.
-- Python 3.10+ avec pip.
-- Carte Arduino Leonardo (ou compatible) pour le spoofing.
-- Connexion Internet pour le téléchargement d’arduino-cli si nécessaire.
+- GPU compatible DirectX 11 (dxcam/d3dshot).
+- Python 3.10+ pour les profils développeurs.
+- Arduino Leonardo (ou compatible) pour le spoofing USB.
+- Connexion Internet pour la vérification de licence et le téléchargement d’outils (arduino-cli, dépendances pip).
 
-## Installation
-1. Cloner ou extraire ce dépôt localement.
-2. Ouvrir un terminal PowerShell à la racine du projet (`COLORBOT VALORANT MAIN GUI`).
-3. Créer un environnement virtuel (recommandé) :
-   ```powershell
-   python -m venv .venv
-   .\.venv\Scripts\Activate.ps1
-   ```
-4. Installer les dépendances listées dans `docs/requirements.txt` :
-   ```powershell
-   pip install -r docs/requirements.txt
-   ```
-5. Vérifier la présence du fichier `configuration/settings.ini` (généré automatiquement au premier lancement si absent).
+## Architecture du dépôt
 
-## Lancement et utilisation
-1. Depuis l’environnement virtuel actif, exécuter :
-   ```powershell
-   python main.py
-   ```
-2. Saisir votre licence dans le panneau de connexion.
-3. Configurer les paramètres souhaités dans le Command Center :
-   - Onglet **General** pour le backend de capture, mode faible consommation, preview.
-   - Onglet **FOV** pour l’overlay visuel.
-   - Onglet **Aimbot** pour les vitesses, offsets, profils et puissances.
-   - Onglet **Triggerbot** pour les délais et zones.
-   - Onglet **Anti Recoil** pour la compensation automatique.
-   - Onglet **Spoofing** pour lancer l’outil Arduino.
-   - Onglet **User** pour les informations système/licence.
-4. Cliquer sur **Lancer le bot** pour démarrer les modules sélectionnés.
-5. Ouvrir l’outil de spoofing USB si besoin pour cloner votre souris et uploader le sketch Arduino.
-
-## Structure du projet
 ```
 COLORBOT VALORANT MAIN GUI/
-├── assets/                # Icônes et éléments graphiques
-├── build/pyinstaller/     # Fichiers de configuration de build
-├── dist/                  # Artefacts générés (vidés par défaut)
-├── docs/                  # Documentation et guides
-├── hardware/microcontroller/  # Firmware et outils Arduino
-├── logs/
-│   ├── activity/          # Journaux applicatifs consolidés
-│   └── crash/             # Crash dumps et traces
-├── scripts/               # Scripts utilitaires (ex: generate_icon)
-├── src/                   # Code Python principal (application + configuration)
-└── main.py
+├─ assets/                 # icônes, branding (saobot.ico)
+├─ src/
+│  ├─ application/         # GUI, capture, modules bot, spoofing
+│  └─ configuration/       # settings, parsers, helpers
+├─ microcontroleur/        # firmware Arduino + licence
+├─ documentation/          # requirements, guides bilingues
+├─ build/, dist/           # artefacts PyInstaller
+├─ logs/                   # activity + crash reports
+└─ main.py
 ```
 
-## Maintenance & logs
-- Les journaux applicatifs se trouvent désormais dans `logs/activity/` (settings, licences, erreurs courantes).
-- Les rapports de crash détaillés sont regroupés dans `logs/crash/`.
-- Les ressources Arduino sont conservées dans `hardware/microcontroller/`.
+## Support & communauté
 
-## Mentions légales
-- SAOBOT Colorbot est un logiciel propriétaire. Toute reproduction, modification, rétro-ingénierie, diffusion ou revente sans accord écrit est strictement interdite.
-- Chaque licence est nominative et liée au HWID/nom d’utilisateur déclaré. Le partage ou la duplication entraîne la révocation immédiate de la clé.
-- Toute violation (contournement des protections, distribution non autorisée, modification du code) conduit à un bannissement définitif de l’utilisateur et de la licence, sans remboursement.
-- L’utilisation du logiciel implique l’acceptation de ces conditions ainsi que des contrôles de licence automatisés.
+- **Site** : [saobot.shop](https://saobot.shop)
+- **Discord** : bouton Support dans l’écran de connexion ou utilisez le lien imprimé dans l’app.
+- **Logs** : joignez `logs/activity/` + `logs/crash/` lors d’un ticket pour accélérer le diagnostic.
+
+## Avertissements juridiques
+
+- Saobot est fourni « tel quel » pour un usage éducatif/démonstratif. Aucune garantie quant aux conséquences en jeu ou sur votre compte.
+- L’utilisation peut violer les CGU de Valorant ou de Riot Games. Vous êtes seul responsable des risques encourus (bannissement, sanctions, pertes de compte, etc.).
+- Revente, rétro-ingénierie, redistribution ou partage de licence interdits sans accord écrit.
+- Toute tentative de contournement ou de duplication entraîne la révocation immédiate de la licence sans remboursement.
 
 ---
 
-© moi — Tous droits réservés. Toute reproduction ou diffusion est interdite sans autorisation préalable.
+© 2025 – Saobot. Tous droits réservés. Toute diffusion hors contexte éducatif nécessite notre accord écrit.
