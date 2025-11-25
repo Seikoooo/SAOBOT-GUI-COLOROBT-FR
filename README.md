@@ -1,6 +1,6 @@
 # SAOBOT – Valorant Colorbot Suite
 
-![Saobot logo](assets/saobot.ico)
+![Saobot logo](saobot.ico)
 
 **Saobot** est une interface premium qui réunit colorbot, overlay FOV évolué et module de spoofing USB autour d’une expérience inspirée de Valorant. L’objectif est de montrer comment automatiser la vision par couleur, l’intégration Arduino et le pilotage d’outils temps réel dans un cadre éducatif. Toute diffusion vise la recherche et l’apprentissage : l’utilisateur final est seul responsable de l’usage qu’il en fait.
 
@@ -111,3 +111,4 @@ COLORBOT VALORANT MAIN GUI/
 ---
 
 © 2025 – Saobot. Tous droits réservés. Toute diffusion hors contexte éducatif nécessite notre accord écrit.
+
