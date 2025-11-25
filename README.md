@@ -2,11 +2,11 @@
 
 [![Saobot preview](PHOTO%20SAOBOT/images/LOGIN.png)](https://saobot.shop)
 
-**Saobot** est une interface premium qui réunit colorbot, overlay FOV évolué et module de spoofing USB autour d’une expérience inspirée de Valorant. L’objectif est de montrer comment automatiser la vision par couleur, l’intégration Arduino et le pilotage d’outils temps réel dans un cadre éducatif. Toute diffusion vise la recherche et l’apprentissage : l’utilisateur final est seul responsable de l’usage qu’il en fait. Le produit commercialisé est **uniquement fourni sous forme d’exécutable `Saobot.exe`** (aucun accès direct au code propriétaire).
+**Saobot** est une interface premium qui réunit colorbot, overlay FOV évolué et module de spoofing USB autour d’une expérience inspirée de Valorant. L’objectif est de montrer comment automatiser la vision par couleur, l’intégration Arduino et le pilotage d’outils temps réel dans un cadre éducatif. Toute diffusion vise la recherche et l’apprentissage : l’utilisateur final est seul responsable de l’usage qu’il en fait. Le produit commercialisé est **uniquement fourni sous forme d’exécutable `Saobot.exe`** (aucun accès direct au code propriétaire) et s’installe via un setup tout-en-un qui configure automatiquement Python 3.12.
 
 > ⚠️ **Avertissement pédagogique** – Saobot est fourni pour illustrer des concepts (vision couleur, hooking d’événements, automatisation HID). Nous ne cautionnons ni n’encourageons une utilisation contraire aux CGU de Riot Games ou d’un tiers. En téléchargeant ce dépôt vous acceptez d’assumer l’entière responsabilité des actions menées avec le logiciel.
 
-> ✅ **Pré-requis critique** – Installez impérativement Python **3.10 ou version ultérieure** sur la machine cliente avant d’exécuter `Saobot.exe`, faute de quoi l’application ne démarrera pas.
+> ✅ **Pré-requis critique** – L’installateur Saobot embarque Python **3.12** et gère tout automatiquement. Aucun prérequis manuel n’est demandé au client, mais Python reste nécessaire pour l’exécution (le setup le déploie pour vous).
 
 ---
 
@@ -60,15 +60,15 @@
 
 1. Rendez-vous sur **[saobot.shop](https://saobot.shop)** et choisissez une formule (support instantané sur **[Discord](https://discord.gg/aQMcEPgUUa)**).
 2. Après paiement, **la clé de licence unique est envoyée par e‑mail** à l’adresse saisie lors de l’achat.
-3. Téléchargez le package client (zip) contenant uniquement `Saobot.exe` et le guide.
-4. Lancez `Saobot.exe`, renseignez la clé reçue : elle est automatiquement **verrouillée sur la machine (HWID)** et **ne peut pas être partagée ni réutilisée ailleurs**.
+3. Téléchargez le **setup Saobot** qui installe automatiquement Python 3.12 + `Saobot.exe` + les ressources.
+4. À la fin du setup, lancez Saobot, saisissez la clé reçue : elle est automatiquement **verrouillée sur la machine (HWID)** et **ne peut pas être partagée ni réutilisée ailleurs**.
 
 > Support instantané : bouton **Support Discord** dans l’écran de connexion ou réponse directe au mail de licence.
 
 ## Utilisation rapide
 
-1. Double-cliquez sur `Saobot.exe` (aucun accès ni exécution de `main.py` n’est fourni aux clients).
-2. Saisissez la clé reçue par e‑mail ➜ validation et vérrouillage sur votre PC.
+1. Double-cliquez sur `SaobotSetup.exe` : il installe automatiquement Python 3.12 puis Saobot.
+2. Lancez Saobot via le raccourci, saisissez la clé reçue par e‑mail ➜ validation et verrouillage sur votre PC.
 3. Paramétrez les modules nécessaires (Aimbot/Triggerbot/Anti-recoil/FOV/Spoofing).
 4. Cliquez sur **Lancer le bot** pour démarrer la session.
 5. Utilisez l’onglet Spoofing pour cloner/téléverser votre périphérique si nécessaire.
@@ -77,7 +77,7 @@
 
 - Windows 10/11 64 bits.
 - GPU compatible DirectX 11 (dxcam/d3dshot).
-- **Installation locale de Python 3.10 ou version supérieure (obligatoire pour exécuter Saobot.exe)**.
+- Python 3.10+ (le setup installe automatiquement Python 3.12 si besoin, aucun prérequis manuel).
 - Arduino Leonardo (ou compatible) **obligatoire pour piloter la souris** (mouvements/simulation HID) et donc pour faire fonctionner l’aimbot en toute discrétion.
 - Connexion Internet (activation licence, téléchargement arduino-cli, mises à jour).
 
