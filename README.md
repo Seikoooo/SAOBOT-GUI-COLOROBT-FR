@@ -14,7 +14,7 @@ Saobot est une expérience premium tout-en-un inspirée de Valorant. L’applica
 
 [![Demo Saobot](https://img.youtube.com/vi/XXXXXXXXXXX/maxresdefault.jpg)](https://www.youtube.com/watch?v=XXXXXXXXXXX)
 
-> Remplacez `XXXXXXXXXXX` par l’ID de votre vidéo YouTube/Vimeo. La miniature reste cliquable et ouvre la présentation (setup, connexion licence, aperçu des modules, etc.).
+> A REMPLACER.
 
 ---
 
@@ -123,3 +123,4 @@ Support instantané : bouton Discord intégré ou [discord.gg/aQMcEPgUUa](https:
 ---
 
 © 2025 – Saobot. Tous droits réservés. Toute diffusion hors cadre éducatif ou démonstratif nécessite un accord écrit.
+
